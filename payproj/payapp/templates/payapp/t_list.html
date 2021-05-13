@@ -1,0 +1,52 @@
+{% extends 'payapp/main.html' %}
+
+{%block content%}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-default">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/">PayApp!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="hellomsg" class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/transaction"> Check Balance </a> </li>
+        </ul>
+    </div>
+    <span class="hellomsg">Hello, {{request.user}} !</span>
+    <span><a class="hellomsg" href="{% url 'logout' %}">Log Out</a></span>
+</nav>
+
+<hr>
+<h1> Your Current Balance : $ {{ checkMoney }} </h1>
+<hr>
+<h2>Your Past Transactions :</h2>
+<div class="containter">
+    
+    <table class="content-table">
+        <thead>
+            <th>
+                To
+            </th>
+            <th>
+                From
+            </th>
+            <th>
+                Amout ($)
+            </th>
+        </thead>
+        {% for si in c %}
+        <tr>
+            <td> {{ si.toPhone }} </td>
+            <td> {{ si.fromPhone }} </td>
+            <td> {{ si.amt|linebreaksbr }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<br>
+
+
+
+{%endblock%}

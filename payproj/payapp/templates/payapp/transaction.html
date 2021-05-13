@@ -1,0 +1,52 @@
+{% extends 'payapp/main.html' %}
+
+    {%block content%}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-default">
+    <a class="navbar-brand"  href="http://127.0.0.1:8000/">PayApp!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="hellomsg" class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/transaction"> Check Balance </a> </li>
+        </ul>
+    </div>
+    <span class="hellomsg">Hello, {{request.user}} !</span>
+    <span><a class="hellomsg" href="{% url 'logout' %}">Log Out</a></span>
+</nav>
+
+
+
+
+<div class="container">
+<div class="title">Transactions Page</div>
+<hr>
+    <form method="POST" action=""> 
+{% csrf_token %}
+  <div class="form-group row">
+    <label for="UsernameInput" class="col-sm-2 col-form-label">UserName</label>
+    <div class="col-sm-10">
+      <input type="text" name="Uname">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword1" class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-10">
+      <input type="text" name="Phno">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Get Transaction Details</button>
+  
+{%endblock%}
+
+
+
+
+
+
+
+
+

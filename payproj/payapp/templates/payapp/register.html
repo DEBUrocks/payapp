@@ -1,0 +1,55 @@
+{% extends 'payapp/main.html' %}
+
+{%block content%}
+
+<div class="container">
+  <form method="POST" action="">
+    <div class="title">User Registration</div>
+    <hr>
+    {% csrf_token %}
+    <div class="user-details">
+    <div class="form-group row input-box">
+      <label for="UsernameInput" class="col-sm-2 col-form-label">UserName</label>
+      <div class="col-sm-10">
+        {{form.username}}
+      </div>
+    </div>
+    <div class="form-group row input-box">
+      <label for="inputPassword1" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        {{form.password1}}
+      </div>
+    </div>
+    <div class="form-group row input-box">
+      <label for="inputPassword2" class="col-sm-2 col-form-label">Confirm Password</label>
+      <div class="col-sm-10">
+        {{form.password2}}
+      </div>
+    </div>
+    <div class="form-group row input-box">
+      <label for="inputPassword1" class="col-sm-2 col-form-label">Phone Number</label>
+      <div class="col-sm-10">
+        <input type="text" name="Phno">
+      </div>
+    </div>
+    <div class="form-group row input-box">
+      <label for="inputPassword1" class="col-sm-2 col-form-label">Initial Balance</label>
+      <div class="col-sm-10">
+        <input type="text" name="Mny">
+      </div>
+    </div>
+
+
+
+
+
+    </div>
+    {{form.errors}}
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Create User</button>
+      <a class="btn btn-dark" href="http://127.0.0.1:8000/login" role="button">Existing User?</a>
+    </div>
+
+</form>
+</div>
+{%endblock%}

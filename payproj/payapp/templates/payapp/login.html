@@ -1,0 +1,31 @@
+{% extends 'payapp/main.html' %}
+
+{%block content%}
+
+
+<div class="container">
+  <div class="title">User Login</div>
+  <hr>
+  {% for i in messages %}
+  <h3> {{i}} </h3>
+  {% endfor %}
+  <form method='POST'>
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">UserName</label>
+      <input type="text" name="username" class="form-control" id="uname" placeholder="Enter UserName">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+    <a class="btn btn-dark" href="http://127.0.0.1:8000/register" role="button">Register User</a>
+</div>
+
+</form>
+
+{%endblock%}
