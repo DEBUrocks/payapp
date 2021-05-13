@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-8)skv@85__@jy3n36(1bqp2v4!a#1ls0f4#ep5wq)hvc2s(!w$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['thepayapp.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['thepayapp.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
